@@ -112,3 +112,49 @@ git commit -m "docs: 更新README安装说明"
 git commit -m "refactor: 优化数据库查询性能"
 ```
 
+### Branch
+
+#### 基本指令
+
+```markdown
+# 查看分支
+git branch                 # 查看本地分支（当前分支带 * 号）
+git branch -r              # 查看远程分支
+git branch -a              # 查看所有分支（本地+远程）
+
+# 创建分支
+git branch <分支名>         # 创建新分支（基于当前所在位置）
+git branch <分支名> <commit-hash>  # 基于指定提交创建分支
+
+# 切换分支
+git checkout <分支名>       # 切换到指定分支
+git switch <分支名>         # Git 2.23+ 推荐使用
+
+# 创建并切换分支
+git checkout -b <分支名>    # 创建并切换到新分支
+git switch -c <分支名>      # Git 2.23+ 推荐使用
+
+# 重命名分支
+git branch -m <新分支名>            # 重命名当前分支
+git branch -m <旧分支名> <新分支名>  # 重命名指定分支
+
+# 删除分支
+git branch -d <分支名>      # 安全删除（已合并的分支）
+git branch -D <分支名>      # 强制删除（未合并也删）
+```
+
+#### 合并分支
+
+```
+# 合并分支
+git checkout <目标分支>      # 先切换到要合并到的分支（如 main）
+git merge <源分支>          # 将源分支合并到当前分支
+
+# 取消合并（遇到冲突时）
+git merge --abort          # 放弃本次合并
+
+# 查看已合并/未合并的分支
+git branch --merged        # 查看已合并到当前分支的分支
+git branch --no-merged     # 查看未合并到当前分支的分支
+```
+
