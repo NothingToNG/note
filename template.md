@@ -60,3 +60,55 @@ Hi NothingToNG! You've successfully authenticated, but GitHub does not provide s
 1. git push -u origin main
 1. `git push -u origin main`
 
+## 本地commit
+
+### 基本流程
+
+```
+# 1. 查看当前文件状态
+git status
+
+# 2. 添加文件到暂存区
+git add <文件名>        # 添加单个文件
+git add .              # 添加所有更改的文件
+git add --all          # 添加所有文件（包括删除）
+
+# 3. 提交到本地仓库
+git commit -m "提交说明"
+```
+
+
+
+### commit command
+
+```
+# 带提交信息的提交（推荐）
+git commit -m "修复了登录bug"
+
+# 跳过暂存区，直接提交已跟踪的文件
+git commit -a -m "更新多个文件"
+
+# 修改最后一次提交（信息或漏掉的文件）
+git commit --amend -m "新的提交信息"
+
+# 只提交特定文件
+git add file1.txt file2.txt
+git commit -m "更新了两个配置文件"
+```
+
+### 提交规范
+
+```
+# 功能开发
+git commit -m "feat: 添加用户登录功能"
+
+# 修复bug
+git commit -m "fix: 修复支付金额计算错误"
+
+# 文档更新
+git commit -m "docs: 更新README安装说明"
+
+# 代码优化
+git commit -m "refactor: 优化数据库查询性能"
+```
+
